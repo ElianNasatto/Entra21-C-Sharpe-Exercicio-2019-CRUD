@@ -103,6 +103,26 @@ namespace TelaPrincipal.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diskette_save_saveas_1514 {
+            get {
+                object obj = ResourceManager.GetObject("diskette_save_saveas_1514", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_delete_256_icon_icons_com_75995 {
+            get {
+                object obj = ResourceManager.GetObject("document_delete_256_icon-icons.com_75995", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap employee_3_icon_icons_com_76973 {
             get {
                 object obj = ResourceManager.GetObject("employee_3_icon-icons.com_76973", resourceCulture);
@@ -116,6 +136,26 @@ namespace TelaPrincipal.Properties {
         internal static System.Drawing.Bitmap Fish_Food_icon_icons_com_68747 {
             get {
                 object obj = ResourceManager.GetObject("Fish_Food_icon-icons.com_68747", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_37110 {
+            get {
+                object obj = ResourceManager.GetObject("Save_37110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_37110__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Save_37110 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

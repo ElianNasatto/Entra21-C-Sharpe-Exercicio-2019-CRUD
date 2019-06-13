@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Peixe.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,9 @@
     <Compile Include="TelaPeixe.Designer.cs">
       <DependentUpon>TelaPeixe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TelaPeixe.resx">
+      <DependentUpon>TelaPeixe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\587officebuilding_100466.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_37110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_37110 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette_save_saveas_1514.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_delete_256_icon-icons.com_75995.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

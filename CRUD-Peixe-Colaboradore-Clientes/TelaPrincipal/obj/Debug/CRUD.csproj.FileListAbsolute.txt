@@ -1,0 +1,10 @@
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\bin\Debug\TelaPrincipal.exe.config
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\bin\Debug\TelaPrincipal.exe
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\bin\Debug\TelaPrincipal.pdb
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\CRUD.csprojAssemblyReference.cache
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaPrincipal.resources
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.Properties.Resources.resources
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\CRUD.csproj.GenerateResource.cache
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\CRUD.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.exe
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.pdb

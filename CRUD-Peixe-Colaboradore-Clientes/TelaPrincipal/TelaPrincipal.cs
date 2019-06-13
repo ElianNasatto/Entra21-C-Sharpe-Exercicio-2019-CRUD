@@ -35,5 +35,16 @@ namespace TelaPrincipal
             TelaColaborador form = new TelaColaborador();
             form.Show();
         }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificarCaminhoConexãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCaminhoConexao form = new TelaCaminhoConexao();
+            form.Show();
+        }
     }
 }

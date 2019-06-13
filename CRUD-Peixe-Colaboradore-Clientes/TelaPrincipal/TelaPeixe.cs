@@ -23,10 +23,14 @@ namespace TelaPrincipal
         decimal precoFinal = 0;
         int idAtualizar = 0;
 
+        
+
         private void AtualizaTabela()
         {
+           
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
+            TelaCaminhoConexao form = new TelaCaminhoConexao();
+            conexao.ConnectionString = $@"{form.caminho}";
             try
             {
                 conexao.Open();
@@ -34,6 +38,7 @@ namespace TelaPrincipal
             catch (Exception)
             {
                 MessageBox.Show("Erro ao conectar no banco, não será possivel ver os dados cadastrados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             SqlCommand comando = new SqlCommand();
@@ -144,7 +149,8 @@ namespace TelaPrincipal
                 peixe.Quantidade = Convert.ToInt32(nudQuantidade.Value);
 
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
+                TelaCaminhoConexao form = new TelaCaminhoConexao();
+                conexao.ConnectionString = $@"{form.caminho}";
                 try
                 {
                     conexao.Open();
@@ -186,7 +192,8 @@ namespace TelaPrincipal
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
+            TelaCaminhoConexao form = new TelaCaminhoConexao();
+            conexao.ConnectionString = $@"{form.caminho}";
 
             try
             {
@@ -230,42 +237,52 @@ namespace TelaPrincipal
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Você deve inserir um peixe primeiro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
+            DialogResult result = MessageBox.Show("Realmente deseja apagar?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
 
-                SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
-                try
-                {
-                    conexao.Open();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro ao conectar ao banco de dados", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
 
-                SqlCommand comando = new SqlCommand();
-                comando.Connection = conexao;
 
-                comando.CommandText = "DELETE FROM peixes WHERE id = @ID";
-                comando.Parameters.AddWithValue("@ID", dataGridView1.CurrentRow.Cells[0].Value);
-                try
+                if (dataGridView1.Rows.Count == 0)
                 {
-                    comando.ExecuteNonQuery();
-                    conexao.Close();
+                    MessageBox.Show("Você deve inserir um peixe primeiro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Erro ao deletar", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
-                AtualizaTabela();
+                    SqlConnection conexao = new SqlConnection();
+                    TelaCaminhoConexao form = new TelaCaminhoConexao();
+                    conexao.ConnectionString = $@"{form.caminho}";
+                    try
+                    {
+                        conexao.Open();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao conectar ao banco de dados", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    SqlCommand comando = new SqlCommand();
+                    comando.Connection = conexao;
+
+                    comando.CommandText = "DELETE FROM peixes WHERE id = @ID";
+                    comando.Parameters.AddWithValue("@ID", dataGridView1.CurrentRow.Cells[0].Value);
+                    try
+                    {
+                        MessageBox.Show("Excluido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        comando.ExecuteNonQuery();
+                        conexao.Close();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao deletar", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conexao.Close();
+                        return;
+                    }
+
+                    AtualizaTabela();
+                }
             }
 
         }
@@ -278,7 +295,8 @@ namespace TelaPrincipal
 
 
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
+                TelaCaminhoConexao form = new TelaCaminhoConexao();
+                conexao.ConnectionString = $@"{form.caminho}";
 
                 try
                 {
@@ -322,6 +340,7 @@ namespace TelaPrincipal
                         idAtualizar = 0;
                         AtualizaTabela();
                         LimpaCampos();
+                        conexao.Close();
                         btnAlterar.Visible = false;
                         btnSalvar.Visible = true;
                         btnExcluir.Visible = true;
@@ -332,6 +351,7 @@ namespace TelaPrincipal
                         MessageBox.Show("Erro ao atualizar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         AtualizaTabela();
                         LimpaCampos();
+                        conexao.Close();
                         btnAlterar.Visible = false;
                         btnSalvar.Visible = true;
                         btnExcluir.Visible = true;
@@ -362,7 +382,8 @@ namespace TelaPrincipal
             else
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security=True;Connect Timeout=30";
+                TelaCaminhoConexao form = new TelaCaminhoConexao();
+                conexao.ConnectionString = $@"{form.caminho}";
 
                 try
                 {
@@ -377,21 +398,10 @@ namespace TelaPrincipal
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = conexao;
 
-                comando.CommandText = "SELECT * FROM peixes WHERE id = @ID or nome = @NOME or raca = @RACA or preco = @preco or quantidade = @QUANTIDADE ";
-
-
-
-
-
-                comando.Parameters.AddWithValue("@ID", txtPesquisa.Text);
-                comando.Parameters.AddWithValue("@NOME", txtPesquisa.Text);
-                comando.Parameters.AddWithValue("@RACA", txtPesquisa.Text);
-                comando.Parameters.AddWithValue("@PRECO", txtPesquisa.Text);
-                comando.Parameters.AddWithValue("@QUANTIDADE", txtPesquisa.Text);
-
-
+                comando.CommandText = "SELECT * FROM peixes";
                 DataTable tabela = new DataTable();
                 tabela.Load(comando.ExecuteReader());
+
                 conexao.Close();
 
                 dataGridView1.Rows.Clear();
@@ -399,13 +409,20 @@ namespace TelaPrincipal
                 for (int i = 0; i < tabela.Rows.Count; i++)
                 {
                     DataRow linha = tabela.Rows[i];
-                    Peixe peixe = new Peixe();
-                    peixe.Id = Convert.ToInt32(linha["id"]);
-                    peixe.Nome = linha["nome"].ToString();
-                    peixe.Raca = linha["raca"].ToString();
-                    peixe.Preco = Convert.ToDecimal(linha["preco"]);
-                    peixe.Quantidade = Convert.ToInt32(linha["quantidade"]);
-                    dataGridView1.Rows.Add(new string[] { peixe.Id.ToString(), peixe.Nome, peixe.Raca, peixe.Preco.ToString(), peixe.Quantidade.ToString() });
+                    string pesquisa = txtPesquisa.Text;
+                    if ((linha["id"].ToString() == pesquisa) || (linha["nome"].ToString().Contains(pesquisa) == true) || (linha["raca"].ToString() == pesquisa)
+                        || (linha["preco"].ToString() == pesquisa) || (linha["quantidade"].ToString() == pesquisa))
+                    {
+
+
+                        Peixe peixe = new Peixe();
+                        peixe.Id = Convert.ToInt32(linha["id"]);
+                        peixe.Nome = linha["nome"].ToString();
+                        peixe.Raca = linha["raca"].ToString();
+                        peixe.Preco = Convert.ToDecimal(linha["preco"]);
+                        peixe.Quantidade = Convert.ToInt32(linha["quantidade"]);
+                        dataGridView1.Rows.Add(new string[] { peixe.Id.ToString(), peixe.Nome, peixe.Raca, peixe.Preco.ToString(), peixe.Quantidade.ToString() });
+                    }
                 }
 
             }

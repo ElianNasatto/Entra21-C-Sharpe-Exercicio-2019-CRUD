@@ -46,7 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaminhoConexao.cs" />
     <Compile Include="Peixe.cs" />
+    <Compile Include="TelaCaminhoConexao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCaminhoConexao.Designer.cs">
+      <DependentUpon>TelaCaminhoConexao.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +80,9 @@
     <Compile Include="TelaPeixe.Designer.cs">
       <DependentUpon>TelaPeixe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TelaCaminhoConexao.resx">
+      <DependentUpon>TelaCaminhoConexao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPeixe.resx">
       <DependentUpon>TelaPeixe.cs</DependentUpon>
     </EmbeddedResource>

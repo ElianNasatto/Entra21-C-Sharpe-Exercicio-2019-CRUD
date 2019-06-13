@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPeixe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,20 +44,19 @@
             this.mtbPreco = new System.Windows.Forms.MaskedTextBox();
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
@@ -60,10 +64,43 @@
             this.ColumnRaca,
             this.ColumnPreco,
             this.ColumnQuantidade});
-            this.dataGridView1.Location = new System.Drawing.Point(332, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(331, 125);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 211);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(550, 194);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "ID";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnRaca
+            // 
+            this.ColumnRaca.HeaderText = "Raça";
+            this.ColumnRaca.Name = "ColumnRaca";
+            this.ColumnRaca.ReadOnly = true;
+            // 
+            // ColumnPreco
+            // 
+            this.ColumnPreco.HeaderText = "Preço";
+            this.ColumnPreco.Name = "ColumnPreco";
+            this.ColumnPreco.ReadOnly = true;
+            // 
+            // ColumnQuantidade
+            // 
+            this.ColumnQuantidade.HeaderText = "Quantidade";
+            this.ColumnQuantidade.Name = "ColumnQuantidade";
+            this.ColumnQuantidade.ReadOnly = true;
             // 
             // label1
             // 
@@ -146,53 +183,24 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(328, 18);
+            this.label5.Location = new System.Drawing.Point(327, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(245, 24);
             this.label5.TabIndex = 12;
             this.label5.Text = "Lista de Peixes Cadastrados";
             // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "ID";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnRaca
-            // 
-            this.ColumnRaca.HeaderText = "Raça";
-            this.ColumnRaca.Name = "ColumnRaca";
-            this.ColumnRaca.ReadOnly = true;
-            // 
-            // ColumnPreco
-            // 
-            this.ColumnPreco.HeaderText = "Preço";
-            this.ColumnPreco.Name = "ColumnPreco";
-            this.ColumnPreco.ReadOnly = true;
-            // 
-            // ColumnQuantidade
-            // 
-            this.ColumnQuantidade.HeaderText = "Quantidade";
-            this.ColumnQuantidade.Name = "ColumnQuantidade";
-            this.ColumnQuantidade.ReadOnly = true;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = global::TelaPrincipal.Properties.Resources.document_delete_256_icon_icons_com_75995;
-            this.btnExcluir.Location = new System.Drawing.Point(733, 262);
+            this.btnExcluir.Location = new System.Drawing.Point(732, 45);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(149, 57);
+            this.btnExcluir.Size = new System.Drawing.Size(149, 56);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -206,6 +214,7 @@
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Visible = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSalvar
             // 
@@ -221,11 +230,33 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.Location = new System.Drawing.Point(331, 45);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(377, 29);
+            this.txtPesquisa.TabIndex = 14;
+            this.txtPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyDown);
+            this.txtPesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(327, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 24);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Pesquisar";
+            // 
             // TelaPeixe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 335);
+            this.ClientSize = new System.Drawing.Size(891, 339);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudQuantidade);
             this.Controls.Add(this.mtbPreco);
@@ -273,5 +304,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label label6;
     }
 }

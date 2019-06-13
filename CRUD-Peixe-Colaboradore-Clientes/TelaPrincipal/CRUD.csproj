@@ -132,5 +132,8 @@
   <ItemGroup>
     <None Include="Resources\document_delete_256_icon-icons.com_75995.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Banco de Dados\Estrutura.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

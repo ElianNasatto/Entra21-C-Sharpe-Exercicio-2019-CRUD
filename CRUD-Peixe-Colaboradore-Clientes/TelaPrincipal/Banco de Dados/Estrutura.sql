@@ -7,15 +7,18 @@ preco DECIMAL(9,2),
 quantidade INT
 );
 
+drop table colaboradores;
 CREATE TABLE colaboradores (
 id INT PRIMARY KEY IDENTITY(1,1),
 nome VARCHAR(40),
 cpf VARCHAR(11),
-salario DECIMAL(6,2),
-sexo CHAR,
-cargo VARCHAR(20),
+salario DECIMAL(9,2),
+sexo varchar(9),
+cargo VARCHAR(40),
 programador BIT
 );
+select * from colaboradores;
+DELETE FROM colaboradores WHERE id = 1;
 
 CREATE TABLE clientes (
 id INT PRIMARY KEY IDENTITY(1,1),

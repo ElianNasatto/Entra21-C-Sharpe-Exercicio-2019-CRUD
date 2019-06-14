@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colaborador.cs" />
     <Compile Include="Peixe.cs" />
     <Compile Include="TelaCaminhoConexao.cs">
       <SubType>Form</SubType>

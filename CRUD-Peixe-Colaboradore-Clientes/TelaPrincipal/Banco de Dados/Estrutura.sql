@@ -22,16 +22,18 @@ DELETE FROM colaboradores WHERE id = 1;
 
 CREATE TABLE clientes (
 id INT PRIMARY KEY IDENTITY(1,1),
-nome VARCHAR(40),
-saldo DECIMAL(6,2),
-telefone VARCHAR(9),
-estaddo VARCHAR(2),
-cidade VARCHAR(40),
-cep VARCHAR(8),
-logradouro VARCHAR(40),
-numero INT,
+nome        VARCHAR(40),
+saldo       DECIMAL(6,2),
+telefone    VARCHAR(9),
+estaddo     VARCHAR(2),
+cidade      VARCHAR(40),
+cep         VARCHAR(8),
+logradouro  VARCHAR(40),
+numero      INT,
 complemento VARCHAR(80),
-nome_sujo BIT,
-altura DECIMAL(3,1),
-peso DECIMAL(3,1)
+nome_sujo   BIT,
+altura      DECIMAL(3,1),
+peso        DECIMAL(3,1)
 );
+
+

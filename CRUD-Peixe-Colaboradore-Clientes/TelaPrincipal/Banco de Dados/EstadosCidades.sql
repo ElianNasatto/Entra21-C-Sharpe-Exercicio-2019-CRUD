@@ -1,9 +1,10 @@
 ﻿create table estados(
 id_estado int PRIMARY KEY,
-nome_estado VARCHAR(40),
+nome_estado VARCHAR(20),
 uf VARCHAR(2),
 pais int,
 );
+select * from cidades;
 
 INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (1, 'Acre', 'AC', 1),
@@ -33,14 +34,18 @@ INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (25, 'Sergipe', 'SE', 1),
 (26, 'São Paulo', 'SP', 1),
 (27, 'Tocantins', 'TO', 1);
+select * from estados;
+
+drop table cidades;
 
 CREATE TABLE cidades  (
-  id int primary key,
-  nome_cidade varchar(120),
-  estado int,
-  fk_estado int FOREIGN KEY REFERENCES estados(id_estado));
+  id_cidade int primary key,
+  nome_cidade varchar(200),
+   fk_estado int FOREIGN KEY REFERENCES estados(id_estado));
 
-  INSERT INTO cidades(id, nome_cidade, fk_estado) VALUES
+   SELECT nome_cidade FROM cidades WHERE fk_estado = 22;
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (1, 'Afonso Cláudio', 8),
 (2, 'Água Doce do Norte', 8),
 (3, 'Águia Branca', 8),
@@ -1039,7 +1044,9 @@ CREATE TABLE cidades  (
 (996, 'Israelândia', 9),
 (997, 'Itaberaí', 9),
 (998, 'Itaguari', 9),
-(999, 'Itaguaru', 9),
+(999, 'Itaguaru', 9);
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (1000, 'Itajá', 9),
 (1001, 'Itapaci', 9),
 (1002, 'Itapirapuã', 9),
@@ -2039,7 +2046,9 @@ CREATE TABLE cidades  (
 (1996, 'Lambari', 11),
 (1997, 'Lamim', 11),
 (1998, 'Laranjal', 11),
-(1999, 'Lassance', 11),
+(1999, 'Lassance', 11);
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (2000, 'Lavras', 11),
 (2001, 'Leandro Ferreira', 11),
 (2002, 'Leme do Prado', 11),
@@ -2066,9 +2075,7 @@ CREATE TABLE cidades  (
 (2023, 'Maria da Fé', 11),
 (2024, 'Mariana', 11),
 (2025, 'Marilac', 11),
-(2026, 'Mário Campos', 11);
-
-INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
+(2026, 'Mário Campos', 11),
 (2027, 'Maripá de Minas', 11),
 (2028, 'Marliéria', 11),
 (2029, 'Marmelópolis', 11),
@@ -3041,7 +3048,9 @@ INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (2996, 'Maripá', 18),
 (2997, 'Marmeleiro', 18),
 (2998, 'Marquinho', 18),
-(2999, 'Marumbi', 18),
+(2999, 'Marumbi', 18);
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (3000, 'Matelândia', 18),
 (3001, 'Matinhos', 18),
 (3002, 'Mato Rico', 18),
@@ -3935,10 +3944,7 @@ INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (3890, 'Barros Cassal', 23),
 (3891, 'Benjamin Constant do Sul', 23),
 (3892, 'Bento Gonçalves', 23),
-(3893, 'Boa Vista das Missões', 23);
-
-INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
-
+(3893, 'Boa Vista das Missões', 23),
 (3894, 'Boa Vista do Buricá', 23),
 (3895, 'Boa Vista do Cadeado', 23),
 (3896, 'Boa Vista do Incra', 23),
@@ -4044,7 +4050,9 @@ INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (3996, 'Erebango', 23),
 (3997, 'Erechim', 23),
 (3998, 'Ernestina', 23),
-(3999, 'Erval Grande', 23),
+(3999, 'Erval Grande', 23);
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (4000, 'Erval Seco', 23),
 (4001, 'Esmeralda', 23),
 (4002, 'Esperança do Sul', 23),
@@ -5044,7 +5052,9 @@ INSERT INTO estados(id_estado, nome_estado,uf,pais) VALUES
 (4996, 'Joanópolis', 26),
 (4997, 'João Ramalho', 26),
 (4998, 'José Bonifácio', 26),
-(4999, 'Júlio Mesquita', 26),
+(4999, 'Júlio Mesquita', 26);
+
+  INSERT INTO cidades(id_cidade, nome_cidade, fk_estado) VALUES
 (5000, 'Jumirim', 26),
 (5001, 'Jundiaí', 26),
 (5002, 'Junqueirópolis', 26),

@@ -25,3 +25,4 @@ C:\Users\elian\Documents\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-
 T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaCaminhoConexao.resources
 T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaColaborador.resources
 T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaCliente.resources
+C:\Users\elian\Documents\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaCliente.resources

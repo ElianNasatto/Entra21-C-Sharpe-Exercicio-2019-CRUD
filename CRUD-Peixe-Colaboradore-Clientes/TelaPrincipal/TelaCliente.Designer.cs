@@ -74,6 +74,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -98,6 +99,7 @@
             this.cbEstado.Size = new System.Drawing.Size(188, 32);
             this.cbEstado.TabIndex = 34;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
+            this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
             // 
             // txtPesquisa
             // 
@@ -527,11 +529,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Pessoais";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(521, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 616);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label6);
@@ -605,5 +618,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

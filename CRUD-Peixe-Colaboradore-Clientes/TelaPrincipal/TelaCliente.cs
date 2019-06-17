@@ -123,7 +123,7 @@ namespace TelaPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel conectar no banco de dados","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel conectar no banco de dados", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tela.Close();
             }
 
@@ -133,12 +133,12 @@ namespace TelaPrincipal
             DataTable tabela = new DataTable();
             try
             {
-            tabela.Load(comando.ExecuteReader());
+                tabela.Load(comando.ExecuteReader());
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel buscar os estados","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel buscar os estados", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tela.Close();
             }
             for (int i = 0; i < tabela.Rows.Count; i++)
@@ -179,18 +179,22 @@ namespace TelaPrincipal
                 {
                     comando.ExecuteNonQuery();
                     conexao.Close();
-                    MessageBox.Show("Adicionado com sucesso", "Sucesso", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Adicionado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
                     conexao.Close();
-                    MessageBox.Show("Não foi possivel adicionar","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Não foi possivel adicionar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
         }
 
         private void cbCidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
         {
             SqlConnection conexao = new SqlConnection();
             TelaCaminhoConexao tela = new TelaCaminhoConexao();
@@ -202,14 +206,31 @@ namespace TelaPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel adicionar as cidades","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel adicionar as cidades", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnSalvar.Visible = false;
-                
-            }
 
+            }
+            cbCidade.Enabled = true;
             SqlCommand comando = new SqlCommand();
-            comando.CommandText = "SELECT nome_cidade WHERE nome_estado = @NOME_ESTADO";
+            comando.Connection = conexao;
+            comando.CommandText = "SELECT id_estado FROM estados WHERE nome_estado = @ESTADO";
+            comando.Parameters.AddWithValue("@ESTADO", cbEstado.SelectedItem.ToString());
             DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            DataRow linha = tabela.Rows[0];
+            int id = Convert.ToInt32(linha["id_estado"]);
+            comando.Connection.Close();
+            conexao.Close();
+
+            conexao.Open();
+            comando.Connection = conexao;
+
+            tabela.Clear();
+            comando.CommandText = "SELECT nome_cidade FROM cidades WHERE fk_estado = @FKESTADO";
+            string teste = cbEstado.SelectedItem.ToString();
+            comando.Parameters.AddWithValue("@FKESTADO", teste);
+
+
             try
             {
             tabela.Load(comando.ExecuteReader());
@@ -217,18 +238,29 @@ namespace TelaPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel adicionar as cidades", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnSalvar.Visible = false;
+
             }
 
+
+
+            cbCidade.Items.Clear();
             cbCidade.Visible = true;
 
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
-                DataRow linha = tabela.Rows[i];
+                 linha = tabela.Rows[i];
                 cbCidade.Items.Add(linha["nome_cidade"]);
             }
 
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cbCidade.Items.Clear();
         }
     }
+
 }

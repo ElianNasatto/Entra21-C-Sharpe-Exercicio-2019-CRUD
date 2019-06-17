@@ -8,7 +8,7 @@ namespace TelaPrincipal
 {
     class Cliente
     {
-       public int Id;
+      /* public int Id;
        public string Nome;
        public decimal Saldo;
        public string Telefone;
@@ -20,6 +20,6 @@ namespace TelaPrincipal
        public string Complemento;
        public bool Nome_sujo;
        public decimal altura;
-       public decimal peso;
+       public decimal peso;*/
     }
 }

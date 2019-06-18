@@ -19,6 +19,16 @@ namespace TelaPrincipal
         }
 
         bool verificado = false;
+        decimal SaldoFinal = 0;
+        string CepFinal = "";
+       
+        private void RetiraCEP()
+        {
+            CepFinal = mtbCep.Text;
+            CepFinal = CepFinal.Replace("-", "");
+        }
+
+        
         private void VerificaCampos()
         {
             if (txtNome.Text == "")
@@ -80,6 +90,13 @@ namespace TelaPrincipal
             }
             verificado = true;
 
+        }
+
+        private void RetiraSaldo()
+        {
+            string saldo = mtbSaldo.Text;
+            saldo = saldo.Replace("R$", "");
+            SaldoFinal = Convert.ToDecimal(saldo);
         }
 
         private void LimpaCampos()
@@ -172,8 +189,44 @@ namespace TelaPrincipal
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = conexao;
 
-                comando.CommandText = @"INSERT INTO clientes (nome, saldo, telefone, estaddo, cep, logradouro,numero,complemento,nome_sujo,altura,peso 
-                 VALUES (@NOME, @SALDO, @TELEFONE, @ESTADO, @CEP, @LOGRADOURO, @NUMERO, @COMPLEMENTO, @NOME_SUJO, @ALTURA, @PESO";
+                comando.CommandText = @"INSERT INTO clientes (nome, saldo, telefone, estado,cidade, cep, logradouro,numero,complemento,nome_sujo,altura,peso)
+                 VALUES (@NOME, @SALDO, @TELEFONE, @ESTADO,@CIDADE, @CEP, @LOGRADOURO, @NUMERO, @COMPLEMENTO, @NOME_SUJO, @ALTURA, @PESO)";
+                Cliente cliente = new Cliente();
+                cliente.Nome = txtNome.Text;
+                RetiraSaldo();
+                cliente.Saldo = SaldoFinal;
+                cliente.Telefone = mtbFone.Text;
+                cliente.Estado = cbEstado.SelectedItem.ToString();
+                cliente.Cidade = cbCidade.SelectedItem.ToString();
+                cliente.Numero = Convert.ToInt32( mtbNumero.Text);
+                RetiraCEP();
+                cliente.CEP = CepFinal;
+                cliente.Logradouro = txtLogradouro.Text;
+                cliente.Complemento = txtComplemento.Text;
+                if (checkSujo.Checked == true)
+                {
+                    cliente.Nome_sujo = true;
+                }
+                else
+                {
+                    cliente.Nome_sujo = false;
+                }
+
+                cliente.altura =Convert.ToDecimal(mtbAltura.Text);
+                cliente.peso = Convert.ToDecimal(mtbPeso.Text);
+
+                comando.Parameters.AddWithValue("@NOME",cliente.Nome);
+                comando.Parameters.AddWithValue("@SALDO",cliente.Saldo);
+                comando.Parameters.AddWithValue("@TELEFONE",cliente.Telefone);
+                comando.Parameters.AddWithValue("@ESTADO",cliente.Estado);
+                comando.Parameters.AddWithValue("@CIDADE", cliente.Cidade);
+                comando.Parameters.AddWithValue("@CEP",cliente.CEP);
+                comando.Parameters.AddWithValue("@LOGRADOURO",cliente.Logradouro);
+                comando.Parameters.AddWithValue("@NUMERO",cliente.Numero);
+                comando.Parameters.AddWithValue("@COMPLEMENTO",cliente.Complemento);
+                comando.Parameters.AddWithValue("@NOME_SUJO",cliente.Nome_sujo);
+                comando.Parameters.AddWithValue("@ALTURA",cliente.altura);
+                comando.Parameters.AddWithValue("@PESO",cliente.peso);
 
                 try
                 {
@@ -181,8 +234,9 @@ namespace TelaPrincipal
                     conexao.Close();
                     MessageBox.Show("Adicionado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
+                catch (Exception erro )
                 {
+                    MessageBox.Show(erro.ToString());
                     conexao.Close();
                     MessageBox.Show("Não foi possivel adicionar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -196,6 +250,7 @@ namespace TelaPrincipal
 
         private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            /*
             SqlConnection conexao = new SqlConnection();
             TelaCaminhoConexao tela = new TelaCaminhoConexao();
             conexao.ConnectionString = tela.caminho;
@@ -227,8 +282,8 @@ namespace TelaPrincipal
 
             tabela.Clear();
             comando.CommandText = "SELECT nome_cidade FROM cidades WHERE fk_estado = @FKESTADO";
-            string teste = cbEstado.SelectedItem.ToString();
-            comando.Parameters.AddWithValue("@FKESTADO", teste);
+            
+            comando.Parameters.AddWithValue("@FKESTADO", id);
 
 
             try
@@ -236,9 +291,9 @@ namespace TelaPrincipal
             tabela.Load(comando.ExecuteReader());
 
             }
-            catch (Exception)
+            catch (Exception erro)
             {
-
+                MessageBox.Show(erro.ToString());
             }
 
 
@@ -254,7 +309,7 @@ namespace TelaPrincipal
 
 
 
-
+    */
         }
 
         private void button1_Click(object sender, EventArgs e)

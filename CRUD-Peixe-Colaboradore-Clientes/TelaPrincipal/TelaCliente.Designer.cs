@@ -74,7 +74,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,7 +86,7 @@
             this.mtbFone.Mask = "(00)90000-0000";
             this.mtbFone.Name = "mtbFone";
             this.mtbFone.Size = new System.Drawing.Size(140, 29);
-            this.mtbFone.TabIndex = 32;
+            this.mtbFone.TabIndex = 4;
             // 
             // cbEstado
             // 
@@ -97,7 +96,7 @@
             this.cbEstado.Location = new System.Drawing.Point(185, 65);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(188, 32);
-            this.cbEstado.TabIndex = 34;
+            this.cbEstado.TabIndex = 7;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
             this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
             // 
@@ -136,7 +135,7 @@
             this.mtbSaldo.Mask = "$00000,00";
             this.mtbSaldo.Name = "mtbSaldo";
             this.mtbSaldo.Size = new System.Drawing.Size(129, 29);
-            this.mtbSaldo.TabIndex = 33;
+            this.mtbSaldo.TabIndex = 5;
             // 
             // label4
             // 
@@ -175,7 +174,7 @@
             this.txtNome.Location = new System.Drawing.Point(17, 65);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(324, 29);
-            this.txtNome.TabIndex = 31;
+            this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
@@ -310,7 +309,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(158, 265);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(149, 57);
-            this.btnAlterar.TabIndex = 37;
+            this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -324,7 +323,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(12, 265);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(140, 57);
-            this.btnSalvar.TabIndex = 36;
+            this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -333,7 +332,6 @@
             // cbCidade
             // 
             this.cbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCidade.Enabled = false;
             this.cbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCidade.FormattingEnabled = true;
             this.cbCidade.Items.AddRange(new object[] {
@@ -347,7 +345,7 @@
             this.cbCidade.Location = new System.Drawing.Point(24, 126);
             this.cbCidade.Name = "cbCidade";
             this.cbCidade.Size = new System.Drawing.Size(349, 32);
-            this.cbCidade.TabIndex = 48;
+            this.cbCidade.TabIndex = 8;
             this.cbCidade.SelectedIndexChanged += new System.EventHandler(this.cbCidade_SelectedIndexChanged);
             // 
             // label7
@@ -367,7 +365,7 @@
             this.mtbCep.Mask = "00000-000";
             this.mtbCep.Name = "mtbCep";
             this.mtbCep.Size = new System.Drawing.Size(140, 29);
-            this.mtbCep.TabIndex = 50;
+            this.mtbCep.TabIndex = 6;
             // 
             // label8
             // 
@@ -386,7 +384,7 @@
             this.txtLogradouro.MaxLength = 40;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(188, 29);
-            this.txtLogradouro.TabIndex = 52;
+            this.txtLogradouro.TabIndex = 10;
             // 
             // label9
             // 
@@ -415,7 +413,7 @@
             this.mtbNumero.Mask = "00000";
             this.mtbNumero.Name = "mtbNumero";
             this.mtbNumero.Size = new System.Drawing.Size(140, 29);
-            this.mtbNumero.TabIndex = 55;
+            this.mtbNumero.TabIndex = 9;
             this.mtbNumero.ValidatingType = typeof(int);
             // 
             // txtComplemento
@@ -425,7 +423,7 @@
             this.txtComplemento.MaxLength = 80;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(349, 29);
-            this.txtComplemento.TabIndex = 56;
+            this.txtComplemento.TabIndex = 11;
             // 
             // label11
             // 
@@ -455,7 +453,7 @@
             this.mtbAltura.Mask = "0,00";
             this.mtbAltura.Name = "mtbAltura";
             this.mtbAltura.Size = new System.Drawing.Size(54, 29);
-            this.mtbAltura.TabIndex = 59;
+            this.mtbAltura.TabIndex = 2;
             // 
             // label12
             // 
@@ -474,7 +472,7 @@
             this.mtbPeso.Mask = "000,00";
             this.mtbPeso.Name = "mtbPeso";
             this.mtbPeso.Size = new System.Drawing.Size(59, 29);
-            this.mtbPeso.TabIndex = 61;
+            this.mtbPeso.TabIndex = 3;
             // 
             // label13
             // 
@@ -529,22 +527,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Pessoais";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(521, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 616);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label6);
@@ -618,6 +605,5 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
     }
 }

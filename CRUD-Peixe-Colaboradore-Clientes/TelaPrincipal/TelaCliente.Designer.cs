@@ -33,7 +33,6 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.mtbSaldo = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,19 +40,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -74,9 +60,30 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mtbFone
@@ -91,6 +98,7 @@
             // cbEstado
             // 
             this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Enabled = false;
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Location = new System.Drawing.Point(185, 65);
@@ -104,30 +112,20 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(16, 571);
+            this.txtPesquisa.Location = new System.Drawing.Point(116, 225);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(225, 29);
-            this.txtPesquisa.TabIndex = 46;
+            this.txtPesquisa.Size = new System.Drawing.Size(421, 29);
+            this.txtPesquisa.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 544);
+            this.label6.Location = new System.Drawing.Point(17, 228);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 24);
             this.label6.TabIndex = 45;
             this.label6.Text = "Pesquisar";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 343);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(255, 24);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Lista de Clientes Cadastrados";
             // 
             // mtbSaldo
             // 
@@ -175,7 +173,7 @@
             this.txtNome.Location = new System.Drawing.Point(17, 65);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(324, 29);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 0;
             // 
             // label1
             // 
@@ -203,15 +201,320 @@
             this.ColumnCep,
             this.ColumnEstado,
             this.ColumnCidade,
+            this.ColumnBairro,
+            this.ColumnRua,
             this.ColumnNumero,
             this.ColumnLogradouro,
             this.ColumnComplemento});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 370);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 44);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(757, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(1092, 162);
             this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = global::TelaPrincipal.Properties.Resources.document_delete_256_icon_icons_com_75995;
+            this.btnExcluir.Location = new System.Drawing.Point(964, 212);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(149, 56);
+            this.btnExcluir.TabIndex = 0;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::TelaPrincipal.Properties.Resources.diskette_save_saveas_1514;
+            this.btnAlterar.Location = new System.Drawing.Point(163, 271);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(149, 57);
+            this.btnAlterar.TabIndex = 13;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Visible = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = global::TelaPrincipal.Properties.Resources.Save_37110__1_;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.Location = new System.Drawing.Point(12, 271);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(140, 57);
+            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // cbCidade
+            // 
+            this.cbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCidade.Enabled = false;
+            this.cbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCidade.FormattingEnabled = true;
+            this.cbCidade.Items.AddRange(new object[] {
+            " ",
+            "Blumenau",
+            "Florianopolis",
+            "Curitiba",
+            "São Paulo",
+            "Rio de Janeiro",
+            "Salvador"});
+            this.cbCidade.Location = new System.Drawing.Point(24, 131);
+            this.cbCidade.Name = "cbCidade";
+            this.cbCidade.Size = new System.Drawing.Size(349, 32);
+            this.cbCidade.TabIndex = 8;
+            this.cbCidade.SelectedIndexChanged += new System.EventHandler(this.cbCidade_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 24);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Cidade";
+            // 
+            // mtbCep
+            // 
+            this.mtbCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCep.Location = new System.Drawing.Point(24, 65);
+            this.mtbCep.Mask = "00000-000";
+            this.mtbCep.Name = "mtbCep";
+            this.mtbCep.Size = new System.Drawing.Size(140, 29);
+            this.mtbCep.TabIndex = 6;
+            this.mtbCep.Enter += new System.EventHandler(this.mtbCep_Enter);
+            this.mtbCep.Leave += new System.EventHandler(this.mtbCep_Leave);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 24);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "CEP";
+            // 
+            // txtLogradouro
+            // 
+            this.txtLogradouro.Enabled = false;
+            this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogradouro.Location = new System.Drawing.Point(561, 136);
+            this.txtLogradouro.MaxLength = 40;
+            this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Size = new System.Drawing.Size(188, 29);
+            this.txtLogradouro.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(557, 109);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 24);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Logradouro";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(396, 104);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 24);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "Numero";
+            // 
+            // mtbNumero
+            // 
+            this.mtbNumero.Enabled = false;
+            this.mtbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbNumero.Location = new System.Drawing.Point(400, 136);
+            this.mtbNumero.Mask = "00000";
+            this.mtbNumero.Name = "mtbNumero";
+            this.mtbNumero.Size = new System.Drawing.Size(140, 29);
+            this.mtbNumero.TabIndex = 9;
+            this.mtbNumero.ValidatingType = typeof(int);
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Enabled = false;
+            this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplemento.Location = new System.Drawing.Point(400, 195);
+            this.txtComplemento.MaxLength = 80;
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(349, 29);
+            this.txtComplemento.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(396, 168);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 24);
+            this.label11.TabIndex = 57;
+            this.label11.Text = "Complemento";
+            // 
+            // checkSujo
+            // 
+            this.checkSujo.AutoSize = true;
+            this.checkSujo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSujo.Location = new System.Drawing.Point(171, 188);
+            this.checkSujo.Name = "checkSujo";
+            this.checkSujo.Size = new System.Drawing.Size(106, 24);
+            this.checkSujo.TabIndex = 58;
+            this.checkSujo.Text = "Nome Sujo";
+            this.checkSujo.UseVisualStyleBackColor = true;
+            // 
+            // mtbAltura
+            // 
+            this.mtbAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbAltura.Location = new System.Drawing.Point(17, 126);
+            this.mtbAltura.Mask = "0.00";
+            this.mtbAltura.Name = "mtbAltura";
+            this.mtbAltura.Size = new System.Drawing.Size(54, 29);
+            this.mtbAltura.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(13, 99);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 24);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "Altura";
+            // 
+            // mtbPeso
+            // 
+            this.mtbPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbPeso.Location = new System.Drawing.Point(91, 126);
+            this.mtbPeso.Mask = "000.00";
+            this.mtbPeso.Name = "mtbPeso";
+            this.mtbPeso.Size = new System.Drawing.Size(59, 29);
+            this.mtbPeso.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(87, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 24);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Peso";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtRua);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtBairro);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cbEstado);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cbCidade);
+            this.groupBox1.Controls.Add(this.txtComplemento);
+            this.groupBox1.Controls.Add(this.mtbCep);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.mtbNumero);
+            this.groupBox1.Controls.Add(this.txtLogradouro);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(376, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(769, 249);
+            this.groupBox1.TabIndex = 63;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Endereço";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.mtbPeso);
+            this.groupBox2.Controls.Add(this.txtNome);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.mtbAltura);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.mtbSaldo);
+            this.groupBox2.Controls.Add(this.checkSujo);
+            this.groupBox2.Controls.Add(this.mtbFone);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 16);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(358, 249);
+            this.groupBox2.TabIndex = 64;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dados Pessoais";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(20, 168);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 24);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Bairro";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Enabled = false;
+            this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBairro.Location = new System.Drawing.Point(24, 195);
+            this.txtBairro.MaxLength = 40;
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(349, 29);
+            this.txtBairro.TabIndex = 58;
+            // 
+            // txtRua
+            // 
+            this.txtRua.Enabled = false;
+            this.txtRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRua.Location = new System.Drawing.Point(400, 65);
+            this.txtRua.MaxLength = 80;
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(349, 29);
+            this.txtRua.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(396, 38);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 24);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "Rua";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtPesquisa);
+            this.groupBox3.Controls.Add(this.btnExcluir);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(12, 334);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1136, 281);
+            this.groupBox3.TabIndex = 65;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Clientes Cadastrados";
             // 
             // ColumnId
             // 
@@ -273,6 +576,18 @@
             this.ColumnCidade.Name = "ColumnCidade";
             this.ColumnCidade.ReadOnly = true;
             // 
+            // ColumnBairro
+            // 
+            this.ColumnBairro.HeaderText = "Bairro";
+            this.ColumnBairro.Name = "ColumnBairro";
+            this.ColumnBairro.ReadOnly = true;
+            // 
+            // ColumnRua
+            // 
+            this.ColumnRua.HeaderText = "Rua";
+            this.ColumnRua.Name = "ColumnRua";
+            this.ColumnRua.ReadOnly = true;
+            // 
             // ColumnNumero
             // 
             this.ColumnNumero.HeaderText = "Numero";
@@ -291,258 +606,16 @@
             this.ColumnComplemento.Name = "ColumnComplemento";
             this.ColumnComplemento.ReadOnly = true;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::TelaPrincipal.Properties.Resources.document_delete_256_icon_icons_com_75995;
-            this.btnExcluir.Location = new System.Drawing.Point(620, 544);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(149, 56);
-            this.btnExcluir.TabIndex = 38;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Image = global::TelaPrincipal.Properties.Resources.diskette_save_saveas_1514;
-            this.btnAlterar.Location = new System.Drawing.Point(158, 265);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(149, 57);
-            this.btnAlterar.TabIndex = 13;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Visible = false;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Image = global::TelaPrincipal.Properties.Resources.Save_37110__1_;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 265);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(140, 57);
-            this.btnSalvar.TabIndex = 12;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // cbCidade
-            // 
-            this.cbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCidade.FormattingEnabled = true;
-            this.cbCidade.Items.AddRange(new object[] {
-            " ",
-            "Blumenau",
-            "Florianopolis",
-            "Curitiba",
-            "São Paulo",
-            "Rio de Janeiro",
-            "Salvador"});
-            this.cbCidade.Location = new System.Drawing.Point(24, 126);
-            this.cbCidade.Name = "cbCidade";
-            this.cbCidade.Size = new System.Drawing.Size(349, 32);
-            this.cbCidade.TabIndex = 8;
-            this.cbCidade.SelectedIndexChanged += new System.EventHandler(this.cbCidade_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 24);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "Cidade";
-            // 
-            // mtbCep
-            // 
-            this.mtbCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbCep.Location = new System.Drawing.Point(24, 65);
-            this.mtbCep.Mask = "00000-000";
-            this.mtbCep.Name = "mtbCep";
-            this.mtbCep.Size = new System.Drawing.Size(140, 29);
-            this.mtbCep.TabIndex = 6;
-            this.mtbCep.Leave += new System.EventHandler(this.mtbCep_Leave);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 24);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "CEP";
-            // 
-            // txtLogradouro
-            // 
-            this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogradouro.Location = new System.Drawing.Point(185, 193);
-            this.txtLogradouro.MaxLength = 40;
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(188, 29);
-            this.txtLogradouro.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(181, 166);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 24);
-            this.label9.TabIndex = 53;
-            this.label9.Text = "Logradouro";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 24);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "Numero";
-            // 
-            // mtbNumero
-            // 
-            this.mtbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbNumero.Location = new System.Drawing.Point(24, 193);
-            this.mtbNumero.Mask = "00000";
-            this.mtbNumero.Name = "mtbNumero";
-            this.mtbNumero.Size = new System.Drawing.Size(140, 29);
-            this.mtbNumero.TabIndex = 9;
-            this.mtbNumero.ValidatingType = typeof(int);
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplemento.Location = new System.Drawing.Point(24, 262);
-            this.txtComplemento.MaxLength = 80;
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(349, 29);
-            this.txtComplemento.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(20, 235);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 24);
-            this.label11.TabIndex = 57;
-            this.label11.Text = "Complemento";
-            // 
-            // checkSujo
-            // 
-            this.checkSujo.AutoSize = true;
-            this.checkSujo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkSujo.Location = new System.Drawing.Point(161, 193);
-            this.checkSujo.Name = "checkSujo";
-            this.checkSujo.Size = new System.Drawing.Size(106, 24);
-            this.checkSujo.TabIndex = 58;
-            this.checkSujo.Text = "Nome Sujo";
-            this.checkSujo.UseVisualStyleBackColor = true;
-            // 
-            // mtbAltura
-            // 
-            this.mtbAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbAltura.Location = new System.Drawing.Point(17, 126);
-            this.mtbAltura.Mask = "0.00";
-            this.mtbAltura.Name = "mtbAltura";
-            this.mtbAltura.Size = new System.Drawing.Size(54, 29);
-            this.mtbAltura.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 99);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 24);
-            this.label12.TabIndex = 60;
-            this.label12.Text = "Altura";
-            // 
-            // mtbPeso
-            // 
-            this.mtbPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbPeso.Location = new System.Drawing.Point(91, 126);
-            this.mtbPeso.Mask = "000.00";
-            this.mtbPeso.Name = "mtbPeso";
-            this.mtbPeso.Size = new System.Drawing.Size(59, 29);
-            this.mtbPeso.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(87, 99);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 24);
-            this.label13.TabIndex = 62;
-            this.label13.Text = "Peso";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cbEstado);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.cbCidade);
-            this.groupBox1.Controls.Add(this.txtComplemento);
-            this.groupBox1.Controls.Add(this.mtbCep);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.mtbNumero);
-            this.groupBox1.Controls.Add(this.txtLogradouro);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(376, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 306);
-            this.groupBox1.TabIndex = 63;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereço";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.mtbPeso);
-            this.groupBox2.Controls.Add(this.txtNome);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.mtbAltura);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.mtbSaldo);
-            this.groupBox2.Controls.Add(this.checkSujo);
-            this.groupBox2.Controls.Add(this.mtbFone);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(358, 241);
-            this.groupBox2.TabIndex = 64;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dados Pessoais";
-            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 616);
+            this.ClientSize = new System.Drawing.Size(1160, 624);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtPesquisa);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -555,8 +628,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -566,7 +640,6 @@
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mtbSaldo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -587,6 +660,18 @@
         private System.Windows.Forms.MaskedTextBox mtbNumero;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox checkSujo;
+        private System.Windows.Forms.MaskedTextBox mtbAltura;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox mtbPeso;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAltura;
@@ -597,15 +682,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCep;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRua;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLogradouro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnComplemento;
-        private System.Windows.Forms.CheckBox checkSujo;
-        private System.Windows.Forms.MaskedTextBox mtbAltura;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox mtbPeso;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

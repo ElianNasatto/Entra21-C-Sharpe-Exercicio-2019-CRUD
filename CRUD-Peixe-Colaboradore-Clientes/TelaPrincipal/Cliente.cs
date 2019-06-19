@@ -8,18 +8,20 @@ namespace TelaPrincipal
 {
     class Cliente
     {
-       public int Id;
-       public string Nome;
-       public decimal Saldo;
-       public string Telefone;
-       public string Estado;
-       public string Cidade;
-       public string CEP;
-       public string Logradouro;
-       public int Numero;
-       public string Complemento;
-       public bool Nome_sujo;
-       public decimal altura;
-       public decimal peso;
+        public int Id;
+        public string Nome;
+        public decimal Saldo;
+        public string Telefone;
+        public string Estado;
+        public string Cidade;
+        public string Bairro;
+        public string Rua;
+        public string CEP;
+        public string Logradouro;
+        public int Numero;
+        public string Complemento;
+        public bool Nome_sujo;
+        public decimal altura;
+        public decimal peso;
     }
 }

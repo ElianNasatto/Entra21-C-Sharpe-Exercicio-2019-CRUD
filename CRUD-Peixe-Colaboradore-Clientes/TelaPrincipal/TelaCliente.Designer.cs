@@ -99,6 +99,7 @@
             this.cbEstado.TabIndex = 7;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
             this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
+            this.cbEstado.SelectedValueChanged += new System.EventHandler(this.cbEstado_SelectedValueChanged);
             // 
             // txtPesquisa
             // 
@@ -132,7 +133,7 @@
             // 
             this.mtbSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbSaldo.Location = new System.Drawing.Point(21, 188);
-            this.mtbSaldo.Mask = "$00000,00";
+            this.mtbSaldo.Mask = "$00000.00";
             this.mtbSaldo.Name = "mtbSaldo";
             this.mtbSaldo.Size = new System.Drawing.Size(129, 29);
             this.mtbSaldo.TabIndex = 5;
@@ -366,6 +367,7 @@
             this.mtbCep.Name = "mtbCep";
             this.mtbCep.Size = new System.Drawing.Size(140, 29);
             this.mtbCep.TabIndex = 6;
+            this.mtbCep.Leave += new System.EventHandler(this.mtbCep_Leave);
             // 
             // label8
             // 
@@ -450,7 +452,7 @@
             // 
             this.mtbAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbAltura.Location = new System.Drawing.Point(17, 126);
-            this.mtbAltura.Mask = "0,00";
+            this.mtbAltura.Mask = "0.00";
             this.mtbAltura.Name = "mtbAltura";
             this.mtbAltura.Size = new System.Drawing.Size(54, 29);
             this.mtbAltura.TabIndex = 2;
@@ -469,7 +471,7 @@
             // 
             this.mtbPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbPeso.Location = new System.Drawing.Point(91, 126);
-            this.mtbPeso.Mask = "000,00";
+            this.mtbPeso.Mask = "000.00";
             this.mtbPeso.Name = "mtbPeso";
             this.mtbPeso.Size = new System.Drawing.Size(59, 29);
             this.mtbPeso.TabIndex = 3;

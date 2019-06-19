@@ -26,3 +26,6 @@ T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaborador
 T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaColaborador.resources
 T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaCliente.resources
 C:\Users\elian\Documents\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\TelaPrincipal.TelaCliente.resources
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\bin\Debug\Newtonsoft.Json.dll
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\bin\Debug\Newtonsoft.Json.xml
+T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\TelaPrincipal\obj\Debug\CRUD.csproj.CopyComplete

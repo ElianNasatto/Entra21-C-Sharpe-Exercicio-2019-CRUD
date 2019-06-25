@@ -274,7 +274,7 @@ namespace TelaPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel conectar ao banco de dados","ERRO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel conectar ao banco de dados", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -290,7 +290,7 @@ namespace TelaPrincipal
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possivel conectar ao banco de dados","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel conectar ao banco de dados", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -314,7 +314,7 @@ namespace TelaPrincipal
                 cliente.Logradouro = linha["logradouro"].ToString();
                 cliente.Complemento = linha["complemento"].ToString();
 
-                dataGridView1.Rows.Add(new string[] { cliente.Id.ToString(), cliente.Nome, cliente.altura.ToString(), cliente.peso.ToString(), cliente.Telefone, cliente.Saldo.ToString(), cliente.Nome_sujo.ToString(), cliente.CEP,cliente.Estado,cliente.Cidade,cliente.Bairro,cliente.Rua,cliente.Numero.ToString(),cliente.Logradouro,cliente.Complemento});
+                dataGridView1.Rows.Add(new string[] { cliente.Id.ToString(), cliente.Nome, cliente.altura.ToString(), cliente.peso.ToString(), cliente.Telefone, cliente.Saldo.ToString(), cliente.Nome_sujo.ToString(), cliente.CEP, cliente.Estado, cliente.Cidade, cliente.Bairro, cliente.Rua, cliente.Numero.ToString(), cliente.Logradouro, cliente.Complemento });
 
             }
 
@@ -340,12 +340,12 @@ namespace TelaPrincipal
                 WebResponse response;
                 try
                 {
-                response = request.GetResponse();
+                    response = request.GetResponse();
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("CEP invalido","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("CEP invalido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -518,7 +518,7 @@ namespace TelaPrincipal
 
         private void mtbCep_Enter(object sender, EventArgs e)
         {
-            DialogResult result =  MessageBox.Show("Deseja buscar o cep automaticamente","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Deseja buscar o cep automaticamente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
                 mtbCep.Enabled = false;
@@ -535,7 +535,7 @@ namespace TelaPrincipal
             }
             else
             {
-               
+
                 VerificaCEP = true;
                 mtbCep.Focus();
             }
@@ -630,6 +630,45 @@ namespace TelaPrincipal
 
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexao = new SqlConnection();
+            TelaCaminhoConexao tela = new TelaCaminhoConexao();
+            conexao.ConnectionString = tela.caminho;
+            try
+            {
+                conexao.Open();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possivel conectar ao banco de dados", "Erro,", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "DELETE FROM clientes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", dataGridView1.CurrentRow.Cells[0].Value);
+            
+            try
+            {
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                AtualizaTabela();
+                MessageBox.Show("Excluido com sucesso","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.ToString());
+                conexao.Close();
+                MessageBox.Show("Não foi possivel exlcuir","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+
+        }
     }
 
 }
+    
+

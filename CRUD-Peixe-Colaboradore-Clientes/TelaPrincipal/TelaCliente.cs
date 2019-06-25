@@ -328,7 +328,8 @@ namespace TelaPrincipal
 
         string nomeCidade = "";
 
-        private void mtbCep_Leave(object sender, EventArgs e)
+
+        public void VerificaCepInternet()
         {
             if (VerificaCEP == true)
             {
@@ -372,8 +373,9 @@ namespace TelaPrincipal
 
                 txtBairro.Focus();
             }
-
         }
+
+
 
         private void cbEstado_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -516,30 +518,7 @@ namespace TelaPrincipal
 
         bool VerificaCEP = false;
 
-        private void mtbCep_Enter(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Deseja buscar o cep automaticamente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.No)
-            {
-                mtbCep.Enabled = false;
-                cbEstado.Enabled = true;
-                cbEstado.Enabled = true;
-                txtBairro.Enabled = true;
-                txtRua.Enabled = true;
-                txtComplemento.Enabled = true;
-                mtbNumero.Enabled = true;
-                txtLogradouro.Enabled = true;
-                VerificaCEP = false;
-                cbEstado.Focus();
 
-            }
-            else
-            {
-
-                VerificaCEP = true;
-                mtbCep.Focus();
-            }
-        }
 
         int idAltera = 0;
 
@@ -650,25 +629,45 @@ namespace TelaPrincipal
             comando.Connection = conexao;
             comando.CommandText = "DELETE FROM clientes WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", dataGridView1.CurrentRow.Cells[0].Value);
-            
+
             try
             {
                 comando.ExecuteNonQuery();
                 conexao.Close();
                 AtualizaTabela();
-                MessageBox.Show("Excluido com sucesso","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Excluido com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.ToString());
                 conexao.Close();
-                MessageBox.Show("Não foi possivel exlcuir","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possivel exlcuir", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
         }
+
+        private void mtbCep_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DialogResult result = MessageBox.Show("Deseja buscar o cep automaticamente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    VerificaCEP = true;
+                    mtbCep.Focus();
+                    VerificaCepInternet();
+                }
+                else
+                {
+                    cbEstado.Enabled = true;
+                    cbCidade.Enabled = true;
+                }
+
+            }
+        }
     }
 
 }
-    
+
 

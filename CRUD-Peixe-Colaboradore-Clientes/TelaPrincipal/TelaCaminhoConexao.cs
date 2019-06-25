@@ -26,6 +26,6 @@ namespace TelaPrincipal
         private void button2_Click(object sender, EventArgs e)
         {
         }
-        public string caminho = "@Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security = True; Connect Timeout = 30";
+        public string caminho = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe-Entra21-Exercicio-2019-CRUD\CRUD-Peixe-Colaboradore-Clientes\Banco de Dados\BD_CRUD.mdf;Integrated Security = True; Connect Timeout = 30";
     }
 }

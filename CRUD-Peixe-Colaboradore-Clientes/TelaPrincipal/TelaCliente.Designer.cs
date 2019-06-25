@@ -383,8 +383,7 @@
             this.mtbCep.Name = "mtbCep";
             this.mtbCep.Size = new System.Drawing.Size(140, 29);
             this.mtbCep.TabIndex = 6;
-            this.mtbCep.Enter += new System.EventHandler(this.mtbCep_Enter);
-            this.mtbCep.Leave += new System.EventHandler(this.mtbCep_Leave);
+            this.mtbCep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbCep_KeyDown);
             // 
             // label8
             // 
